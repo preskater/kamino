@@ -49,6 +49,9 @@ jobs:
       - uses: rustsec/audit-check@v2.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          # sqlx resolves its optional SQLite driver into Cargo.lock, but this
+          # workspace only builds the Postgres driver (see audit.toml).
+          ignore: RUSTSEC-2026-0459
 
   test:
     runs-on: ubuntu-latest

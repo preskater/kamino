@@ -7,5 +7,8 @@
 # RUSTSEC-2026-0459 / CVE-2026-119375 only affects processes that open a
 # crafted SQLite database plus WAL file, which cannot happen here. Remove this
 # ignore once sqlx ships a lockfile with libsqlite3-sys >= 0.39.
+#
+# CI passes the same advisory through the audit-check `ignore` input, because
+# that action does not read this file.
 [advisories]
 ignore = ["RUSTSEC-2026-0459"]
