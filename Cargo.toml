@@ -1,6 +1,15 @@
 [workspace]
 resolver = "3"
-members = ["crates/common", "crates/agents", "crates/projects"]
+members = [
+    "crates/config",
+    "crates/db",
+    "crates/error",
+    "crates/http",
+    "crates/query",
+    "crates/telemetry",
+    "crates/agents",
+    "crates/projects",
+]
 
 [workspace.package]
 version = "0.1.0"
@@ -11,7 +20,12 @@ description = "Kamino agent and project REST APIs"
 
 [workspace.dependencies]
 # Internal crates
-kamino-common = { path = "crates/common" }
+kamino-config = { path = "crates/config" }
+kamino-db = { path = "crates/db" }
+kamino-error = { path = "crates/error" }
+kamino-http = { path = "crates/http" }
+kamino-query = { path = "crates/query" }
+kamino-telemetry = { path = "crates/telemetry" }
 
 # HTTP
 axum = "0.8"

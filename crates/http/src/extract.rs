@@ -7,7 +7,7 @@ use axum::http::request::Parts;
 use serde::de::DeserializeOwned;
 use validator::Validate;
 
-use crate::error::AppError;
+use kamino_error::AppError;
 
 /// JSON body that is deserialized and then run through `validator`.
 pub struct ValidatedJson<T>(pub T);

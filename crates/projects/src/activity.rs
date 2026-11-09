@@ -1,6 +1,6 @@
 //! Append-only project activity log.
 
-use kamino_common::error::{ApiResult, AppError};
+use kamino_error::{ApiResult, AppError};
 use serde_json::Value;
 use sqlx::Postgres;
 use uuid::Uuid;

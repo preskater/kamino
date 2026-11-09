@@ -2,7 +2,9 @@
 
 use anyhow::Context;
 use kamino_agents::{AppState, config::Config, run};
-use kamino_common::{config, db, telemetry};
+use kamino_config as config;
+use kamino_db as db;
+use kamino_telemetry as telemetry;
 use sqlx::migrate::Migrator;
 
 static MIGRATOR: Migrator = sqlx::migrate!("./migrations");

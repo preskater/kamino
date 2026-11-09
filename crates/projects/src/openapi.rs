@@ -1,6 +1,6 @@
 //! OpenAPI document.
 
-use kamino_common::pagination::Page;
+use kamino_query::Page;
 use utoipa::OpenApi;
 
 use crate::resources::{

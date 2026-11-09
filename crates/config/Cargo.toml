@@ -1,0 +1,11 @@
+[package]
+name = "kamino-config"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Environment loading and typed lookups"
+
+[dependencies]
+anyhow.workspace = true
+dotenvy.workspace = true

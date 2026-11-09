@@ -937,7 +937,12 @@ dependencies = [
  "chrono",
  "http",
  "http-body-util",
- "kamino-common",
+ "kamino-config",
+ "kamino-db",
+ "kamino-error",
+ "kamino-http",
+ "kamino-query",
+ "kamino-telemetry",
  "rust_decimal",
  "serde",
  "serde_json",
@@ -954,25 +959,46 @@ dependencies = [
 ]
 
 [[package]]
-name = "kamino-common"
+name = "kamino-config"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+]
+
+[[package]]
+name = "kamino-db"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "sqlx",
+]
+
+[[package]]
+name = "kamino-error"
 version = "0.1.0"
 dependencies = [
  "anyhow",
  "axum",
- "chrono",
- "dotenvy",
- "http",
  "serde",
  "serde_json",
- "serde_urlencoded",
  "sqlx",
  "thiserror",
+ "tracing",
+ "validator",
+]
+
+[[package]]
+name = "kamino-http"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "axum",
+ "kamino-error",
+ "serde",
  "tokio",
  "tower-http",
  "tracing",
- "tracing-subscriber",
- "utoipa",
- "uuid",
  "validator",
 ]
 
@@ -985,7 +1011,12 @@ dependencies = [
  "chrono",
  "http",
  "http-body-util",
- "kamino-common",
+ "kamino-config",
+ "kamino-db",
+ "kamino-error",
+ "kamino-http",
+ "kamino-query",
+ "kamino-telemetry",
  "serde",
  "serde_json",
  "sqlx",
@@ -998,6 +1029,27 @@ dependencies = [
  "utoipa-swagger-ui",
  "uuid",
  "validator",
+]
+
+[[package]]
+name = "kamino-query"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "kamino-error",
+ "serde",
+ "serde_json",
+ "sqlx",
+ "utoipa",
+ "uuid",
+]
+
+[[package]]
+name = "kamino-telemetry"
+version = "0.1.0"
+dependencies = [
+ "tracing",
+ "tracing-subscriber",
 ]
 
 [[package]]

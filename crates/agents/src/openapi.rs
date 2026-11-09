@@ -7,7 +7,7 @@ use crate::resources::{
     agent_tool_calls, agents, skill_files, skill_versions, skills, task_skill_usage,
 };
 
-use kamino_common::pagination::Page;
+use kamino_query::Page;
 
 #[derive(OpenApi)]
 #[openapi(

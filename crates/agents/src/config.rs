@@ -2,7 +2,7 @@
 
 use std::net::SocketAddr;
 
-use kamino_common::config;
+use kamino_config as config;
 
 #[derive(Debug, Clone)]
 pub struct Config {

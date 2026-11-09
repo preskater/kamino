@@ -14,7 +14,8 @@ use sqlx::postgres::PgRow;
 use sqlx::{FromRow, PgPool};
 use uuid::Uuid;
 
-use crate::error::{ApiResult, AppError};
+use kamino_error::{ApiResult, AppError};
+
 use crate::pagination::{ListParams, Page};
 
 /// Postgres types the runtime query layer knows how to cast from text.
