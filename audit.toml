@@ -1,0 +1,11 @@
+# cargo-audit configuration.
+#
+# sqlx 0.9 resolves its optional SQLite driver into Cargo.lock even though this
+# workspace only enables the Postgres driver and never compiles or links SQLite.
+# Verify with: cargo tree -i libsqlite3-sys  (currently prints nothing).
+#
+# RUSTSEC-2026-0459 / CVE-2026-119375 only affects processes that open a
+# crafted SQLite database plus WAL file, which cannot happen here. Remove this
+# ignore once sqlx ships a lockfile with libsqlite3-sys >= 0.39.
+[advisories]
+ignore = ["RUSTSEC-2026-0459"]
