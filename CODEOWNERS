@@ -1,0 +1,12 @@
+# Default owners for everything in the repository.
+* @preskater
+
+# Service-specific review.
+/crates/agents/    @preskater
+/crates/projects/  @preskater
+/crates/query/     @preskater
+
+# Infrastructure and community files.
+/.github/          @preskater
+/docker/           @preskater
+/docker-compose.yml @preskater

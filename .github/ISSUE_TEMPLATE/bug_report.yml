@@ -1,0 +1,74 @@
+name: Bug report
+description: Report a defect in the agents or projects API
+title: "[bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug. For security issues use the
+        [security policy](https://github.com/preskater/kamino/security/policy) instead of a
+        public issue.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      description: Which part of the workspace does the bug affect?
+      options:
+        - Agents API (crates/agents)
+        - Projects API (crates/projects)
+        - Shared crates (error, config, telemetry, db, query, http)
+        - Infrastructure (docker, CI, Makefile)
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the actual behaviour, including status codes and response bodies.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Include the request, SQL schema state or command sequence.
+      placeholder: |
+        1. make up
+        2. make run-agents
+        3. curl -X POST http://localhost:8081/v1/skills -d '...'
+        4. observe 500
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Commit or version
+      description: Output of `git rev-parse --short HEAD`, or the release tag.
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, `rustc --version`, Docker or Postgres version if self-hosted.
+      placeholder: macOS 15, rustc 1.99.0, postgres:16-alpine
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Paste relevant output with `RUST_LOG=debug`, remove secrets first.
+      render: shell

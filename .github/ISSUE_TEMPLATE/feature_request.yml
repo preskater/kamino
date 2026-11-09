@@ -1,0 +1,48 @@
+name: Feature request
+description: Suggest an enhancement or a new endpoint
+title: "[feat]: "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Agents API (crates/agents)
+        - Projects API (crates/projects)
+        - Shared crates (error, config, telemetry, db, query, http)
+        - Infrastructure (docker, CI, Makefile)
+        - Documentation
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What are you trying to do that the project does not support today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the API shape, behaviour or change you would like. Include examples.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches or workarounds you have tried.
+
+  - type: checkboxes
+    id: impact
+    attributes:
+      label: Compatibility
+      options:
+        - label: This would change an existing response shape or status code
+        - label: This requires a database migration
+        - label: I am willing to open a pull request

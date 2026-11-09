@@ -1,6 +1,13 @@
 # Kamino
 
+[![ci](https://github.com/preskater/kamino/actions/workflows/ci.yml/badge.svg)](https://github.com/preskater/kamino/actions/workflows/ci.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![rust: 1.94+](https://img.shields.io/badge/rust-1.94%2B-orange.svg)](rust-toolchain.toml)
+
 Two independent REST APIs sharing one Cargo workspace:
+
+> **Status:** early. The APIs are complete for the modelled domains but pre-1.0; response
+> shapes and paths may change between releases. See [CHANGELOG.md](CHANGELOG.md).
 
 | Service | Binary | Default port | Database | Domain docs |
 | --- | --- | --- | --- | --- |
@@ -143,4 +150,25 @@ git config core.hooksPath .githooks
 
 The hook runs `cargo fmt --check` and `cargo clippy -D warnings`; `.pre-commit-config.yaml`
 provides the same hooks for teams using the `pre-commit` framework. CI mirrors this in
-`.github/workflows/ci.yml` (fmt, clippy, tests against a Postgres service, Docker builds).
+`.github/workflows/ci.yml` (fmt, clippy, audit, tests against a Postgres service, Docker
+builds).
+
+## Contributing
+
+Issues and pull requests are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) for the
+development setup, code style and migration rules, and read the
+[Code of Conduct](CODE_OF_CONDUCT.md). Larger changes should start as an issue so the API
+shape can be discussed first.
+
+The domain models live in [AGENTS.md](AGENTS.md) and [PROJECTS.md](PROJECTS.md); keep those
+diagrams in sync when tables or relations change.
+
+## Security
+
+Please report vulnerabilities privately through
+[GitHub Security Advisories](https://github.com/preskater/kamino/security/advisories/new).
+See [SECURITY.md](SECURITY.md) for scope and response times.
+
+## License
+
+[MIT](LICENSE) © 2026 Preskater.
