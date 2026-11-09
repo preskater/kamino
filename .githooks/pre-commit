@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Works without installing the `pre-commit` framework. Enable with:
+#   git config core.hooksPath .githooks
+set -euo pipefail
+
+if ! command -v cargo >/dev/null 2>&1; then
+  echo "cargo not found, skipping rust hooks" >&2
+  exit 0
+fi
+
+cargo fmt --all -- --check
+cargo clippy --workspace --all-targets --quiet -- -D warnings

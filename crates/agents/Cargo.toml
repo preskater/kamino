@@ -1,0 +1,34 @@
+[package]
+name = "kamino-agents"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Kamino agents REST API"
+
+[[bin]]
+name = "agents"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+axum.workspace = true
+chrono.workspace = true
+http.workspace = true
+kamino-common.workspace = true
+rust_decimal.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sqlx.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+tower-http.workspace = true
+tracing.workspace = true
+utoipa.workspace = true
+utoipa-swagger-ui.workspace = true
+uuid.workspace = true
+validator.workspace = true
+
+[dev-dependencies]
+http-body-util.workspace = true
+tower.workspace = true
